@@ -97,16 +97,13 @@ app.post('/webhook', async (req, res) => {
                 })
                 break;
             }
-            case "Class 9 CS Subjects": {
-                if (params.ordinal != '9th' || params.number != '9') {
-                    break;
-                }
+            case "SAF Collegiate Boards": {
                 res.send({
                     "fulfillmentMessages": [
                         {
                             "text": {
                                 "text": [
-                                    "Class 9 Computer Science Subjects are: Computer Science, English, Urdu, Islamiat, Mathematics, Physics, Chemistry"
+                                    "Currently SAF Collegiate offers coaching for Karachi Board only. We are working on expanding our services to other boards."
                                 ]
                             }
                         }
@@ -114,16 +111,13 @@ app.post('/webhook', async (req, res) => {
                 })
                 break;
             }
-            case "Class 9 Pre-Eng Subjects": {
-                if (params.ordinal != '9th' || params.number != '9') {
-                    break;
-                }
+            case "Admission Process": {
                 res.send({
                     "fulfillmentMessages": [
                         {
                             "text": {
                                 "text": [
-                                    "Class 9 Pre-Engineering Subjects are: English, Urdu, Islamiat, Mathematics, Physics, Chemistry"
+                                    "Admission process is very simple. You can visit our website and fill the admission form. Our admission team will contact you shortly."
                                 ]
                             }
                         }
@@ -131,16 +125,13 @@ app.post('/webhook', async (req, res) => {
                 })
                 break;
             }
-            case "Class 9 Pre-Med Subjects": {
-                if (params.ordinal != '9th' || params.number != '9') {
-                    break;
-                }
+            case "Admission Fee": {
                 res.send({
                     "fulfillmentMessages": [
                         {
                             "text": {
                                 "text": [
-                                    "Class 9 Pre-Medical Subjects are: English, Urdu, Islamiat, Biology, Physics, Chemistry"
+                                    "Admission fee is PKR 500. You can pay the fee online or in cash at our office."
                                 ]
                             }
                         }
@@ -148,13 +139,13 @@ app.post('/webhook', async (req, res) => {
                 })
                 break;
             }
-            case "Class 10 Pre-Med Subjects": {
+            case "Fee Structure Class 9": {
                 res.send({
                     "fulfillmentMessages": [
                         {
                             "text": {
                                 "text": [
-                                    "Class 10 Pre-Medical Subjects are: English, Urdu, Islamiat, Biology, Physics, Chemistry"
+                                    "Fee structure for class 9 is PKR 3000 per month. You can pay the fee online or in cash at our office. For more details visit our office."
                                 ]
                             }
                         }
@@ -162,13 +153,125 @@ app.post('/webhook', async (req, res) => {
                 })
                 break;
             }
-            case "Class 10 CS Subjects": {
+            case "Fee Structure Class 10": {
                 res.send({
                     "fulfillmentMessages": [
                         {
                             "text": {
                                 "text": [
-                                    "Class 10 Computer Science Subjects are: Computer Science, English, Urdu, Islamiat, Mathematics, Physics, Chemistry"
+                                    "Fee structure for class 10 is PKR 3000 per month. You can pay the fee online or in cash at our office. For more details visit our office."
+                                ]
+                            }
+                        }
+                    ]
+                })
+                break;
+            }
+            case "Fee Structure Class 11": {
+                res.send({
+                    "fulfillmentMessages": [
+                        {
+                            "text": {
+                                "text": [
+                                    "Fee structure for class 11 is PKR 3500 per month. You can pay the fee online or in cash at our office. For more details visit our office."
+                                ]
+                            }
+                        }
+                    ]
+                })
+                break;
+            }
+            case "Fee Structure Class 12": {
+                res.send({
+                    "fulfillmentMessages": [
+                        {
+                            "text": {
+                                "text": [
+                                    "Fee structure for class 12 is PKR 3500 per month. You can pay the fee online or in cash at our office. For more details visit our office."
+                                ]
+                            }
+                        }
+                    ]
+                })
+                break;
+            }
+            case "SAF Faculty": {
+                res.send({
+                    "fulfillmentMessages": [
+                        {
+                            "text": {
+                                "text": [
+                                    "SAF Collegiate has a team of highly qualified and experienced faculty members. Our faculty members are highly qualified and experienced. They are well trained and have a lot of experience in their respective fields.\n\nOur faculty members include \n\n 1. Sir Shabbir Hussain (Faculty of Physics and Commerce) \n 2. Sir Abdul Rehman (Faculty of Chemistry) \n 3. Sir Muhammad Owais (Faculty of English, Biology, Commerce) \n 4. Sir Zahid Ali (Faculty of Math) \n 5. Sir Muhammad Nabeel (Faculty of Computer Science) \n\n For more details visit our center."
+                                ]
+                            }
+                        }
+                    ]
+                })
+                break;
+            }
+            case "SAF Contact Number": {
+                res.send({
+                    "fulfillmentMessages": [
+                        {
+                            "text": {
+                                "text": [
+                                    "You can contact us at the following numbers: \n\n 1. 021-34567890 \n 2. 021-34567891 \n 3. 021-34567892"
+                                ]
+                            }
+                        }
+                    ]
+                })
+                break;
+            }
+            case "SAF Address": {
+                res.send({
+                    "fulfillmentMessages": [
+                        {
+                            "text": {
+                                "text": [
+                                    "You can visit our center at the following address: \n\n 1. 123, ABC Street, Karachi, Pakistan"
+                                ]
+                            }
+                        }
+                    ]
+                })
+                break;
+            }
+            case "SAF Email": {
+                res.send({
+                    "fulfillmentMessages": [
+                        {
+                            "text": {
+                                "text": [
+                                    "You can contact us at the following email address: safcollegiate@gmail.com"
+                                ]
+                            }
+                        }
+                    ]
+                })
+                break;
+            }
+            case "SAF Website": {
+                res.send({
+                    "fulfillmentMessages": [
+                        {
+                            "text": {
+                                "text": [
+                                    "You can visit our website at the following link: https://safcollegiate.com"
+                                ]
+                            }
+                        }
+                    ]
+                })
+                break;
+            }
+            case "SAF Social Media": {
+                res.send({
+                    "fulfillmentMessages": [
+                        {
+                            "text": {
+                                "text": [
+                                    "You can follow us on the following social media platforms: \n\n 1. Facebook: https://www.facebook.com/safcollegiate \n 2. Instagram: https://www.instagram.com/safcollegiate \n 3. Twitter: https://www.twitter.com/safcollegiate"
                                 ]
                             }
                         }

@@ -40,168 +40,149 @@ app.post('/webhook', async (req, res) => {
         const intentName = body.queryResult.intent.displayName
         const params = body.queryResult.parameters
 
-        //console.log(intentName, params)
-
         switch (intentName) {
-            case "Welcome":
-                {
-                    res.send({
-                        "fulfillmentMessages": [
-                            {
-                                "text": {
-                                    "text": [
-                                        "Welcome to the Cake Shop! How can I help you?"
-                                    ]
-                                }
-                            }
-                        ]
-                    })
-                    break;
-                }
-            case "OrderCake":
-                {
-                    let flavor = params.CakeFlavor
-                    let size = params.CakeSize
-                    let quantity = params.CakeQuantity
-
-                    console.log('flavor: ', flavor)
-                    console.log('size: ', size)
-                    console.log('quantity: ', quantity)
-
-                    if (!size) {
-                        res.send({
-                            "fulfillmentMessages": [
-                                {
-                                    "text": {
-                                        "text": [
-                                            "What size would you like your cake to be? Please specify in pounds (e.g. 1 pound, 2.5 pounds)."
-                                        ]
-                                    }
-                                }
-                            ]
-                        })
-                    }
-                    else if (!flavor) {
-                        res.send({
-                            "fulfillmentMessages": [
-                                {
-                                    "text": {
-                                        "text": [
-                                            "What flavor would you like your cake to be?"
-                                        ]
-                                    }
-                                }
-                            ]
-                        })
-                    }
-                    else if (quantity == undefined) {
-                        quantity = 1
-                    }
-
-                    const newOrder = new orderModel({
-                        orderNumber: Math.floor(Math.random() * 1000000000),
-                        orderName: "Cake",
-                        cakeSize: size.amount,
-                        CakeFlavor: flavor,
-                        qty: quantity == undefined ? 1 : quantity // if quantity is undefined, set it to 1
-                    })
-
-                    newOrder.save((err, doc) => {
-                        if (err) {
-                            console.log(err);
-                        }
-                        else {
-                            console.log(doc);
-                        }
-                    })
-
-                    res.send({
-                        "fulfillmentMessages": [
-                            {
-                                "text": {
-                                    "text": [
-                                        `You ordered ${quantity} ${flavor} cake of size ${size.amount} pound. Your order number is ${newOrder.orderNumber}. Feel free to ask me about your order status.`
-                                    ]
-                                }
-                            }
-                        ]
-                    })
-
-                    break;
-                }
-            case "CheckOrderStatus":
-                {
-                    let orderNumber = params.orderNumber
-
-                    if (!orderNumber) {
-                        res.send({
-                            "fulfillmentMessages": [
-                                {
-                                    "text": {
-                                        "text": [
-                                            "Please provide your order number."
-                                        ]
-                                    }
-                                }
-                            ]
-                        });
-                        return;
-                    }
-
-                    orderModel.findOne({ orderNumber: orderNumber }, function (err, order) {
-                        if (err) {
-                            console.log(err);
-                            res.send({
-                                "fulfillmentMessages": [
-                                    {
-                                        "text": {
-                                            "text": [
-                                                "something is wrong in server, please try again"
-                                            ]
-                                        }
-                                    }
+            case "Default Welcome Intent": {
+                res.send({
+                    "fulfillmentMessages": [
+                        {
+                            "text": {
+                                "text": [
+                                    "Hello There, Welcome to SAF Collegiate. How can I help you?"
                                 ]
-                            })
-                        }
-                        else {
-                            if (order) {
-                                res.send({
-                                    "fulfillmentMessages": [
-                                        {
-                                            "text": {
-                                                "text": [
-                                                    `Your order status is ${order.status}.`
-                                                ]
-                                            }
-                                        }
-                                    ]
-                                })
-                            }
-                            else {
-                                res.send({
-                                    "fulfillmentMessages": [
-                                        {
-                                            "text": {
-                                                "text": [
-                                                    "No order found with this order number."
-                                                ]
-                                            }
-                                        }
-                                    ]
-                                })
                             }
                         }
-                    }
-                    )
-
+                    ]
+                })
+                break;
+            }
+            case "What is SAF Collegiate": {
+                res.send({
+                    "fulfillmentMessages": [
+                        {
+                            "text": {
+                                "text": [
+                                    "SAF Collegiate is a leading educational institution in Pakistan. It is a part of the SAF Group of Companies, which is a leading conglomerate in Pakistan. SAF Collegiate is a leading educational institution in Pakistan. It is a part of the SAF Group of Companies, which is a leading conglomerate in Pakistan."
+                                ]
+                            }
+                        }
+                    ]
+                })
+                break;
+            }
+            case "SAF Collegiate Classes": {
+                res.send({
+                    "fulfillmentMessages": [
+                        {
+                            "text": {
+                                "text": [
+                                    "SAF Collegiate offers coaching for the following classes: 9th, 10th, 11th, 12th"
+                                ]
+                            }
+                        }
+                    ]
+                })
+                break;
+            }
+            case "SAF Collegiate Streams": {
+                res.send({
+                    "fulfillmentMessages": [
+                        {
+                            "text": {
+                                "text": [
+                                    "SAF Collegiate offers coaching for the following streams: Computer Science, Pre-Medical, Pre-Engineering, Commerce"
+                                ]
+                            }
+                        }
+                    ]
+                })
+                break;
+            }
+            case "Class 9 CS Subjects": {
+                if (params.ordinal != '9th' || params.number != '9') {
+                    break;
                 }
+                res.send({
+                    "fulfillmentMessages": [
+                        {
+                            "text": {
+                                "text": [
+                                    "Class 9 Computer Science Subjects are: Computer Science, English, Urdu, Islamiat, Mathematics, Physics, Chemistry"
+                                ]
+                            }
+                        }
+                    ]
+                })
+                break;
+            }
+            case "Class 9 Pre-Eng Subjects": {
+                if (params.ordinal != '9th' || params.number != '9') {
+                    break;
+                }
+                res.send({
+                    "fulfillmentMessages": [
+                        {
+                            "text": {
+                                "text": [
+                                    "Class 9 Pre-Engineering Subjects are: English, Urdu, Islamiat, Mathematics, Physics, Chemistry"
+                                ]
+                            }
+                        }
+                    ]
+                })
+                break;
+            }
+            case "Class 9 Pre-Med Subjects": {
+                if (params.ordinal != '9th' || params.number != '9') {
+                    break;
+                }
+                res.send({
+                    "fulfillmentMessages": [
+                        {
+                            "text": {
+                                "text": [
+                                    "Class 9 Pre-Medical Subjects are: English, Urdu, Islamiat, Biology, Physics, Chemistry"
+                                ]
+                            }
+                        }
+                    ]
+                })
+                break;
+            }
+            case "Class 10 Pre-Med Subjects": {
+                res.send({
+                    "fulfillmentMessages": [
+                        {
+                            "text": {
+                                "text": [
+                                    "Class 10 Pre-Medical Subjects are: English, Urdu, Islamiat, Biology, Physics, Chemistry"
+                                ]
+                            }
+                        }
+                    ]
+                })
+                break;
+            }
+            case "Class 10 CS Subjects": {
+                res.send({
+                    "fulfillmentMessages": [
+                        {
+                            "text": {
+                                "text": [
+                                    "Class 10 Computer Science Subjects are: Computer Science, English, Urdu, Islamiat, Mathematics, Physics, Chemistry"
+                                ]
+                            }
+                        }
+                    ]
+                })
+                break;
+            }
             default: {
                 res.send({
                     "fulfillmentMessages": [
                         {
                             "text": {
                                 "text": [
-                                    "something is wrong in server, please try again"
+                                    "Sorry, I didn't get that. Please try again"
                                 ]
                             }
                         }
@@ -238,46 +219,3 @@ app.use('/', express.static(path.join(__dirname, "/Web")));
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
 })
-
-
-/*------------------Schema------------------*/
-let orderSchema = new mongoose.Schema({
-    orderNumber: { type: Number, required: true, unique: true },
-    orderName: { type: String, required: true },
-    cakeSize: { type: Number, required: true },
-    CakeFlavor: { type: String, required: true },
-    qty: { type: Number, required: true },
-    status: { type: String, default: "pending" }, // canceled, inProgress delivered
-    createdOn: { type: Date, default: Date.now }
-});
-
-const orderModel = mongoose.model('cakeOrders', orderSchema);
-
-
-/*---------------------Database--------------------------*/
-let dbURI = 'mongodb+srv://NabeelSohail:Nabeel30@cluster0.lidnkc6.mongodb.net/?retryWrites=true&w=majority';
-mongoose.connect(dbURI);
-
-mongoose.connection.on('connected', () => {
-    console.log('Mongoose is connected');
-}
-);
-
-mongoose.connection.on('error', (err) => {
-    console.log('Mongoose connection error: ', err);
-}
-);
-
-mongoose.connection.on('disconnected', () => {
-    console.log('Mongoose is disconnected');
-}
-
-);
-
-process.on('SIGINT', () => {
-    mongoose.connection.close(() => {
-        console.log('Mongoose is disconnected due to application termination');
-        process.exit(0);
-    });
-}
-);

@@ -349,6 +349,90 @@ app.post('/webhook', async (req, res) => {
                 })
                 break;
             }
+            case 'Payment Method': {
+                res.send({
+                    "fulfillmentMessages": [
+                        {
+                            "text": {
+                                "text": [
+                                    "You can pay our fee physically at our office or by online platforms such as easy-paisa or jazz cash"
+                                ]
+                            }
+                        }
+                    ]
+                })
+                break;
+            }
+            case 'Late Fee': {
+                res.send({
+                    "fulfillmentMessages": [
+                        {
+                            "text": {
+                                "text": [
+                                    "Yes, there is a late fee depending upon how late the fee is submitted. For more details you can visit our center"
+                                ]
+                            }
+                        }
+                    ]
+                })
+                break;
+            }
+            case 'Fee Installment': {
+                res.send({
+                    "fulfillmentMessages": [
+                        {
+                            "text": {
+                                "text": [
+                                    "As such we have no such provision for fee installments. The student has to pay its fee every month at once"
+                                ]
+                            }
+                        }
+                    ]
+                })
+                break;
+            }
+            case 'Transport Facility': {
+                res.send({
+                    "fulfillmentMessages": [
+                        {
+                            "text": {
+                                "text": [
+                                    "Currently we are not providing any transportation facility to the students"
+                                ]
+                            }
+                        }
+                    ]
+                })
+                break;
+            }
+            case 'One on One Coaching': {
+                res.send({
+                    "fulfillmentMessages": [
+                        {
+                            "text": {
+                                "text": [
+                                    "We are currently not providing one on one coaching to the students, for more detail you can visit our coaching center"
+                                ]
+                            }
+                        }
+                    ]
+                })
+                break;
+            }
+            case 'Tests and Exams': {
+                res.send({
+                    "fulfillmentMessages": [
+                        {
+                            "text": {
+                                "text": [
+                                    "Yes, we have a very good schedule of weekly test and we also conducts mids and final examination"
+                                ]
+                            }
+                        }
+                    ]
+                })
+                break;
+            }
             default: {
                 res.send({
                     "fulfillmentMessages": [

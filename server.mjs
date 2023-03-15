@@ -279,6 +279,76 @@ app.post('/webhook', async (req, res) => {
                 })
                 break;
             }
+            case 'SAF Entrance Test': {
+                res.send({
+                    "fulfillmentMessages": [
+                        {
+                            "text": {
+                                "text": [
+                                    "Currently we are not conducting any entrance test. You can visit our center and fill the admission form. Our admission team will contact you shortly."
+                                ]
+                            }
+                        }
+                    ]
+                })
+                break;
+            }
+            case 'SAF Study Material': {
+                res.send({
+                    "fulfillmentMessages": [
+                        {
+                            "text": {
+                                "text": [
+                                    "We provide study material to our students. You can visit our center and get the study material."
+                                ]
+                            }
+                        }
+                    ]
+                })
+                break;
+            }
+            case 'SAF Class Duration': {
+                res.send({
+                    "fulfillmentMessages": [
+                        {
+                            "text": {
+                                "text": [
+                                    "Our classes duration is 45 minutes and it can be extended if required. we have 4 classes per day and our classes are scheduled for 6 days a week. You can visit our center and get the detailed schedule."
+                                ]
+                            }
+                        }
+                    ]
+                })
+                break;
+            }
+            case 'SAF Timing': {
+                res.send({
+                    "fulfillmentMessages": [
+                        {
+                            "text": {
+                                "text": [
+                                    "Our Classes are scheduled from 3:00 PM to 8:00 PM, six days a week from Monday to Saturday. You can visit our center and get the detailed schedule."
+                                ]
+                            }
+                        }
+                    ]
+                })
+                break;
+            }
+            case 'SAF Online Classes': {
+                res.send({
+                    "fulfillmentMessages": [
+                        {
+                            "text": {
+                                "text": [
+                                    "We are currently not providing online classes. You can visit our center and get the detailed schedule."
+                                ]
+                            }
+                        }
+                    ]
+                })
+                break;
+            }
             default: {
                 res.send({
                     "fulfillmentMessages": [

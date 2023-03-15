@@ -433,6 +433,174 @@ app.post('/webhook', async (req, res) => {
                 })
                 break;
             }
+            case 'Career Counseling': {
+                res.send({
+                    "fulfillmentMessages": [
+                        {
+                            "text": {
+                                "text": [
+                                    "Yes, we provide career counseling to our students. You can visit our center and get the detailed schedule."
+                                ]
+                            }
+                        }
+                    ]
+                })
+                break;
+            }
+            case 'Personalities Development': {
+                res.send({
+                    "fulfillmentMessages": [
+                        {
+                            "text": {
+                                "text": [
+                                    "Yes, we provide personality development classes to our students. You can visit our center and get the detailed schedule."
+                                ]
+                            }
+                        }
+                    ]
+                })
+                break;
+            }
+            case 'Success Rate': {
+                res.send({
+                    "fulfillmentMessages": [
+                        {
+                            "text": {
+                                "text": [
+                                    "We have a very good success rate. We have a very good team of teachers and they are very dedicated towards their work. We have a very good environment for learning and we have a very good schedule for our students."
+                                ]
+                            }
+                        }
+                    ]
+                })
+                break;
+            }
+            case 'Average Pass Percentage': {
+                res.send({
+                    "fulfillmentMessages": [
+                        {
+                            "text": {
+                                "text": [
+                                    "We have a very good success rate. We have a very good team of teachers and they are very dedicated towards their work. We have a very good environment for learning and we have a very good schedule for our students."
+                                ]
+                            }
+                        }
+                    ]
+                })
+                break;
+            }
+            case 'Track Student Progress': {
+                res.send({
+                    "fulfillmentMessages": [
+                        {
+                            "text": {
+                                "text": [
+                                    "Yes, we have a very good system for tracking the progress of our students. We have a very good team of teachers and they are very dedicated towards their work. We have a very good environment for learning and we have a very good schedule for our students."
+                                ]
+                            }
+                        }
+                    ]
+                })
+                break;
+            }
+            case 'Parent Teacher Meeting': {
+                res.send({
+                    "fulfillmentMessages": [
+                        {
+                            "text": {
+                                "text": [
+                                    "Yes, we have a very good system for tracking the progress of our students. We have a very good team of teachers and they are very dedicated towards their work. We have a very good environment for learning and we have a very good schedule for our students."
+                                ]
+                            }
+                        }
+                    ]
+                })
+                break;
+            }
+            case 'Feedback': {
+                res.send({
+                    "fulfillmentMessages": [
+                        {
+                            "text": {
+                                "text": [
+                                    "Yes we have a very good system for feedback."
+                                ]
+                            }
+                        }
+                    ]
+                })
+                break;
+            }
+            case 'Refund Policy': {
+                res.send({
+                    "fulfillmentMessages": [
+                        {
+                            "text": {
+                                "text": [
+                                    "We have a very good refund policy. You can visit our center and get the detailed schedule."
+                                ]
+                            }
+                        }
+                    ]
+                })
+                break;
+            }
+            case 'Makeup - Remedial Classes': {
+                res.send({
+                    "fulfillmentMessages": [
+                        {
+                            "text": {
+                                "text": [
+                                    "Yes, we have a very good system for makeup classes. You can visit our center and get the detailed schedule."
+                                ]
+                            }
+                        }
+                    ]
+                })
+                break;
+            }
+            case 'Revision Classes': {
+                res.send({
+                    "fulfillmentMessages": [
+                        {
+                            "text": {
+                                "text": [
+                                    "Yes, we have a very good system for revision classes. You can visit our center and get the detailed schedule."
+                                ]
+                            }
+                        }
+                    ]
+                })
+                break;
+            }
+            case 'Handle Absenteeism': {
+                res.send({
+                    "fulfillmentMessages": [
+                        {
+                            "text": {
+                                "text": [
+                                    "Yes, we have a very good system for handling absenteeism. You can visit our center and get the detailed schedule."
+                                ]
+                            }
+                        }
+                    ]
+                })
+                break;
+            }
+            case 'Equal Opportunity': {
+                res.send({
+                    "fulfillmentMessages": [
+                        {
+                            "text": {
+                                "text": [
+                                    "Yes, we provide equal opportunity to all the students. You can visit our center and get the detailed schedule."
+                                ]
+                            }
+                        }
+                    ]
+                })
+                break;
+            }
             default: {
                 res.send({
                     "fulfillmentMessages": [

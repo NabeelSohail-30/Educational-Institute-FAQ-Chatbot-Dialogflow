@@ -489,20 +489,6 @@ app.post('/webhook', async (req, res) => {
                 })
                 break;
             }
-            case 'Track Student Progress': {
-                res.send({
-                    "fulfillmentMessages": [
-                        {
-                            "text": {
-                                "text": [
-                                    "Yes, we have a very good system for tracking the progress of our students. We have a very good team of teachers and they are very dedicated towards their work. We have a very good environment for learning and we have a very good schedule for our students."
-                                ]
-                            }
-                        }
-                    ]
-                })
-                break;
-            }
             case 'Parent Teacher Meeting': {
                 res.send({
                     "fulfillmentMessages": [
@@ -545,27 +531,13 @@ app.post('/webhook', async (req, res) => {
                 })
                 break;
             }
-            case 'Makeup - Remedial Classes': {
+            case 'Makeup Remedial Extra Revision Classes': {
                 res.send({
                     "fulfillmentMessages": [
                         {
                             "text": {
                                 "text": [
                                     "Yes, we have a very good system for makeup classes. You can visit our center and get the detailed schedule."
-                                ]
-                            }
-                        }
-                    ]
-                })
-                break;
-            }
-            case 'Revision Classes': {
-                res.send({
-                    "fulfillmentMessages": [
-                        {
-                            "text": {
-                                "text": [
-                                    "Yes, we have a very good system for revision classes. You can visit our center and get the detailed schedule."
                                 ]
                             }
                         }
@@ -587,13 +559,69 @@ app.post('/webhook', async (req, res) => {
                 })
                 break;
             }
-            case 'Equal Opportunity': {
+            case 'Faculty of Computer Science': {
                 res.send({
                     "fulfillmentMessages": [
                         {
                             "text": {
                                 "text": [
-                                    "Yes, we provide equal opportunity to all the students. You can visit our center and get the detailed schedule."
+                                    "Sir Muhammad Nabeel, an excellent teacher, is the head of the department of Computer Science. He has a very good experience in the field of computer science. He is a software developer and he has a very good experience in the field of software developer, computer science and IT"
+                                ]
+                            }
+                        }
+                    ]
+                })
+                break;
+            }
+            case 'Faculty of Physics': {
+                res.send({
+                    "fulfillmentMessages": [
+                        {
+                            "text": {
+                                "text": [
+                                    "Sir Muhammad Nabeel, an excellent teacher, is the head of the department of Computer Science. He has a very good experience in the field of computer science. He is a software developer and he has a very good experience in the field of software developer, computer science and IT"
+                                ]
+                            }
+                        }
+                    ]
+                })
+                break;
+            }
+            case 'Faculty of Chemistry': {
+                res.send({
+                    "fulfillmentMessages": [
+                        {
+                            "text": {
+                                "text": [
+                                    "Sir Muhammad Nabeel, an excellent teacher, is the head of the department of Computer Science. He has a very good experience in the field of computer science. He is a software developer and he has a very good experience in the field of software developer, computer science and IT"
+                                ]
+                            }
+                        }
+                    ]
+                })
+                break;
+            }
+            case 'Faculty of English': {
+                res.send({
+                    "fulfillmentMessages": [
+                        {
+                            "text": {
+                                "text": [
+                                    "Sir Muhammad Nabeel, an excellent teacher, is the head of the department of Computer Science. He has a very good experience in the field of computer science. He is a software developer and he has a very good experience in the field of software developer, computer science and IT"
+                                ]
+                            }
+                        }
+                    ]
+                })
+                break;
+            }
+            case 'Faculty of Math': {
+                res.send({
+                    "fulfillmentMessages": [
+                        {
+                            "text": {
+                                "text": [
+                                    "Sir Muhammad Nabeel, an excellent teacher, is the head of the department of Computer Science. He has a very good experience in the field of computer science. He is a software developer and he has a very good experience in the field of software developer, computer science and IT"
                                 ]
                             }
                         }

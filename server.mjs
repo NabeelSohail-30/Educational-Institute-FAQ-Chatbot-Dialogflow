@@ -85,6 +85,36 @@ app.post('/webhook', async (req, res) => {
                 break;
             }
 
+            case "AdmissionFee": {
+                res.send({
+                    "fulfillmentMessages": [
+                        {
+                            "text": {
+                                "text": [
+                                    "The admission fee is PKR 100,000."
+                                ]
+                            }
+                        }
+                    ]
+                })
+                break;
+            }
+
+            case "AdmissionProcess": {
+                res.send({
+                    "fulfillmentMessages": [
+                        {
+                            "text": {
+                                "text": [
+                                    "The admission process is as follows: 1. Fill out the admission form. 2. Submit the admission form along with the required documents. 3. Pay the admission fee. 4. Start attending the classes at the institute."
+                                ]
+                            }
+                        }
+                    ]
+                })
+                break;
+            }
+
             case "Default Fallback Intent": {
                 res.send({
                     "fulfillmentMessages": [

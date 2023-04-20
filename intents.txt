@@ -2,7 +2,6 @@ About
 Address
 AdmissionFee
 AdmissionProcess
-AdmissionProcess
 AlumniNetwork
 AssessmentFormat
 AvailableBatches

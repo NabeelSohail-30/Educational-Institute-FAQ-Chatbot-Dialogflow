@@ -115,6 +115,21 @@ app.post('/webhook', async (req, res) => {
                 break;
             }
 
+            case "EducationalBoard": {
+                res.send({
+                    "fulfillmentMessages": [
+                        {
+                            "text": {
+                                "text": [
+                                    "SAF Collegiate is affiliated with the Board of Intermediate and Secondary Education, Karachi."
+                                ]
+                            }
+                        }
+                    ]
+                })
+                break;
+            }
+
             case "Default Fallback Intent": {
                 res.send({
                     "fulfillmentMessages": [

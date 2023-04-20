@@ -70,6 +70,21 @@ app.post('/webhook', async (req, res) => {
                 break;
             }
 
+            case "Address": {
+                res.send({
+                    "fulfillmentMessages": [
+                        {
+                            "text": {
+                                "text": [
+                                    "SAF Collegiate is located at 1st Floor, 1st Avenue, Block 5, Clifton, Karachi, Pakistan."
+                                ]
+                            }
+                        }
+                    ]
+                })
+                break;
+            }
+
             case "Default Fallback Intent": {
                 res.send({
                     "fulfillmentMessages": [

@@ -162,22 +162,7 @@ app.post('/webhook', async (req, res) => {
 
             case "Instagram": {
                 let response = [{
-                    "richContent": [
-                        [
-                            {
-                                "type": "button",
-                                "icon": {
-                                    "type": "chevron_right",
-                                    "color": "#FF9800"
-                                },
-                                "text": "Button text",
-                                "link": "https://example.com",
-                                "event": {
-                                    "name": ""
-                                }
-                            }
-                        ]
-                    ]
+
                 }];
                 res.send({
                     "fulfillmentMessages": [
@@ -195,14 +180,21 @@ app.post('/webhook', async (req, res) => {
 
             case "Default Fallback Intent": {
                 res.send({
-                    "fulfillmentMessages": [
-                        {
-                            "text": {
-                                "text": [
-                                    "Sorry, I didn't get that. Please try again or contact us at 0300-1234567"
-                                ]
+                    "richContent": [
+                        [
+                            {
+                                "type": "button",
+                                "icon": {
+                                    "type": "chevron_right",
+                                    "color": "#FF9800"
+                                },
+                                "text": "Button text",
+                                "link": "https://example.com",
+                                "event": {
+                                    "name": ""
+                                }
                             }
-                        }
+                        ]
                     ]
                 })
                 break;

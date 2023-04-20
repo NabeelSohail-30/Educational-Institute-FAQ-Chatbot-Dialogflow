@@ -130,6 +130,69 @@ app.post('/webhook', async (req, res) => {
                 break;
             }
 
+            case "Email": {
+                res.send({
+                    "fulfillmentMessages": [
+                        {
+                            "text": {
+                                "text": [
+                                    "You can contact us at example@gnail.com"
+                                ]
+                            }
+                        }
+                    ]
+                })
+                break;
+            }
+
+            case "Facebook": {
+                res.send({
+                    "fulfillmentMessages": [
+                        {
+                            "text": {
+                                "text": [
+                                    "You can find us on Facebook at https://www.facebook.com/SAF-Collegiate-100000000000000"
+                                ]
+                            }
+                        }
+                    ]
+                })
+                break;
+            }
+
+            case "Instagram": {
+                let response = [{
+                    "richContent": [
+                        [
+                            {
+                                "type": "button",
+                                "icon": {
+                                    "type": "chevron_right",
+                                    "color": "#FF9800"
+                                },
+                                "text": "Button text",
+                                "link": "https://example.com",
+                                "event": {
+                                    "name": ""
+                                }
+                            }
+                        ]
+                    ]
+                }];
+                res.send({
+                    "fulfillmentMessages": [
+                        {
+                            "text": {
+                                "text": [
+                                    response
+                                ]
+                            }
+                        }
+                    ]
+                })
+                break;
+            }
+
             case "Default Fallback Intent": {
                 res.send({
                     "fulfillmentMessages": [

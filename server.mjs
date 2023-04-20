@@ -69,6 +69,22 @@ app.post('/webhook', async (req, res) => {
                 })
                 break;
             }
+
+            case "Default Fallback Intent": {
+                res.send({
+                    "fulfillmentMessages": [
+                        {
+                            "text": {
+                                "text": [
+                                    "Sorry, I didn't get that. Please try again or contact us at 0300-1234567"
+                                ]
+                            }
+                        }
+                    ]
+                })
+                break;
+            }
+
             default: {
                 res.send({
                     "fulfillmentMessages": [

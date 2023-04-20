@@ -55,7 +55,7 @@ app.post('/webhook', async (req, res) => {
                 })
                 break;
             }
-            case "What is SAF Collegiate": {
+            case "About": {
                 res.send({
                     "fulfillmentMessages": [
                         {

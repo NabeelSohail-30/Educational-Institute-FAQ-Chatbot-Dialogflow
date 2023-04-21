@@ -166,20 +166,26 @@ app.post('/webhook', async (req, res) => {
                         {
                             "text": {
                                 "text": [
-                                    "You can find us on Instagram at https://www.instagram.com/coder_nabeel30/?hl=en"
+                                    "Follow us on Instagram to stay up-to-date with our latest news and events"
                                 ]
                             }
                         },
                         {
-                            "card": {
-                                "title": "Follow us on Instagram!",
-                                "subtitle": "Stay up-to-date with our latest news and events",
-                                "imageUri": "https://example.com/instagram-logo.png",
-                                "buttons": [
-                                    {
-                                        "text": "Follow us",
-                                        "postback": "https://www.instagram.com/coder_nabeel30/?hl=en"
-                                    }
+                            "payload": {
+                                "richContent": [
+                                    [
+                                        {
+                                            "type": "info",
+                                            "title": "Follow us on Instagram!",
+                                            "subtitle": "Stay up-to-date with our latest news and events",
+                                            "image": {
+                                                "src": {
+                                                    "rawUrl": "https://example.com/instagram-logo.png"
+                                                }
+                                            },
+                                            "actionLink": "https://www.instagram.com/safcollegiate/"
+                                        }
+                                    ]
                                 ]
                             }
                         }
@@ -187,7 +193,6 @@ app.post('/webhook', async (req, res) => {
                 });
                 break;
             }
-
 
             case "Default Fallback Intent": {
                 res.send({

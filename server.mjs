@@ -536,7 +536,7 @@ app.post('/webhook', async (req, res) => {
                                 "richContent": [
                                     [
                                         {
-                                            "type": "list",
+                                            "type": "chips",
                                             "title": "Required Documents",
                                             "subtitle": "You need to submit the following documents",
                                             "image": {
@@ -544,35 +544,39 @@ app.post('/webhook', async (req, res) => {
                                                     "rawUrl": "https://example.com/images/logo.png"
                                                 }
                                             },
-                                            "listItems": [
+                                            "options": [
                                                 {
-                                                    "key": "1",
-                                                    "synonyms": [
-                                                        "first"
-                                                    ],
-
-                                                    "title": "Matric Certificate",
-                                                    "description": "Matric Certificate"
+                                                    "text": "Matric Certificate",
+                                                    "image": {
+                                                        "src": {
+                                                            "rawUrl": "https://example.com/images/logo.png"
+                                                        }
+                                                    },
                                                 },
                                                 {
-                                                    "key": "2",
-                                                    "synonyms": [
-                                                        "second"
-                                                    ],
-
-                                                    "title": "Intermediate Certificate",
-                                                    "description": "Intermediate Certificate"
+                                                    "text": "FSC Certificate",
+                                                    "image": {
+                                                        "src": {
+                                                            "rawUrl": "https://example.com/images/logo.png"
+                                                        }
+                                                    },
                                                 },
                                                 {
-                                                    "key": "3",
-                                                    "synonyms": [
-                                                        "third"
-                                                    ],
-
-                                                    "title": "Character Certificate",
-                                                    "description": "Character Certificate"
+                                                    "text": "Domicile",
+                                                    "image": {
+                                                        "src": {
+                                                            "rawUrl": "https://example.com/images/logo.png"
+                                                        }
+                                                    },
                                                 },
-
+                                                {
+                                                    "text": "Character Certificate",
+                                                    "image": {
+                                                        "src": {
+                                                            "rawUrl": "https://example.com/images/logo.png"
+                                                        }
+                                                    },
+                                                },
                                             ]
                                         }
                                     ]

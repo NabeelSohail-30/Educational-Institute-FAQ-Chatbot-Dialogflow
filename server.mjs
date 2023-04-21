@@ -432,6 +432,40 @@ app.post('/webhook', async (req, res) => {
                 break;
             }
 
+            case "WhatsApp": {
+                res.send({
+                    "fulfillmentMessages": [
+                        {
+                            "text": {
+                                "text": [
+                                    "You can contact us on WhatsApp at 0300-1234567"
+                                ]
+                            }
+                        },
+                        {
+                            "payload": {
+                                "richContent": [
+                                    [
+                                        {
+                                            "type": "info",
+                                            "title": "Contact us on WhatsApp",
+                                            "subtitle": "0300-1234567",
+                                            "image": {
+                                                "src": {
+                                                    "rawUrl": "https://example.com/whatsapp-logo.png"
+                                                }
+                                            },
+                                            "actionLink": "https://wa.me/923001234567"
+                                        }
+                                    ]
+                                ]
+                            }
+                        }
+                    ]
+                });
+                break;
+            }
+
             case "Default Fallback Intent": {
                 res.send({
                     "fulfillmentMessages": [

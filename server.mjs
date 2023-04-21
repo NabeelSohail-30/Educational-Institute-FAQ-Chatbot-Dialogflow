@@ -130,36 +130,6 @@ app.post('/webhook', async (req, res) => {
                 break;
             }
 
-            case "Email": {
-                res.send({
-                    "fulfillmentMessages": [
-                        {
-                            "text": {
-                                "text": [
-                                    "You can contact us at example@gnail.com"
-                                ]
-                            }
-                        }
-                    ]
-                })
-                break;
-            }
-
-            case "Facebook": {
-                res.send({
-                    "fulfillmentMessages": [
-                        {
-                            "text": {
-                                "text": [
-                                    "You can find us on Facebook at https://www.facebook.com/SAF-Collegiate-100000000000000"
-                                ]
-                            }
-                        }
-                    ]
-                })
-                break;
-            }
-
             case "Instagram": {
                 res.send({
                     "fulfillmentMessages": [
@@ -184,6 +154,274 @@ app.post('/webhook', async (req, res) => {
                                                 }
                                             },
                                             "actionLink": "https://www.instagram.com/safcollegiate/"
+                                        }
+                                    ]
+                                ]
+                            }
+                        }
+                    ]
+                });
+                break;
+            }
+
+            case "Facebook": {
+                res.send({
+                    "fulfillmentMessages": [
+                        {
+                            "text": {
+                                "text": [
+                                    "Follow us on Facebook to stay up-to-date with our latest news and events"
+                                ]
+                            }
+                        },
+                        {
+                            "payload": {
+                                "richContent": [
+                                    [
+                                        {
+                                            "type": "info",
+                                            "title": "Follow us on Facebook!",
+                                            "subtitle": "Stay up-to-date with our latest news and events",
+                                            "image": {
+                                                "src": {
+                                                    "rawUrl": "https://example.com/facebook-logo.png"
+                                                }
+                                            },
+                                            "actionLink": "https://www.facebook.com/safcollegiate/"
+                                        }
+                                    ]
+                                ]
+                            }
+                        }
+                    ]
+                });
+                break;
+            }
+
+            case "Email": {
+                res.send({
+                    "fulfillmentMessages": [
+                        {
+                            "text": {
+                                "text": [
+                                    "You can contact us at safcollegiate@gmail.com"
+                                ]
+                            }
+                        },
+                        {
+                            "payload": {
+                                "richContent": [
+                                    [
+                                        {
+                                            "type": "info",
+                                            "title": "Contact us at safcollegiate@gmail.com",
+                                            "subtitle": "We are here to help you!",
+                                            "image": {
+                                                "src": {
+                                                    "rawUrl": "https://example.com/email-logo.png"
+                                                }
+                                            },
+                                            "actionLink": "mailto:sample@gmail.com"
+                                        }
+                                    ]
+                                ]
+                            }
+                        }
+                    ]
+                })
+                break;
+            }
+
+            case "LinkedIn": {
+                res.send({
+                    "fulfillmentMessages": [
+                        {
+                            "text": {
+                                "text": [
+                                    "Follow us on LinkedIn to stay up-to-date with our latest news and events"
+                                ]
+                            }
+                        },
+                        {
+                            "payload": {
+                                "richContent": [
+                                    [
+                                        {
+                                            "type": "info",
+                                            "title": "Follow us on LinkedIn!",
+                                            "subtitle": "Stay up-to-date with our latest news and events",
+                                            "image": {
+                                                "src": {
+                                                    "rawUrl": "https://example.com/linkedin-logo.png"
+                                                }
+                                            },
+                                            "actionLink": "https://www.linkedin.com/company/saf-collegiate/"
+                                        }
+                                    ]
+                                ]
+                            }
+                        }
+                    ]
+                });
+                break;
+            }
+
+            case "Twitter": {
+                res.send({
+                    "fulfillmentMessages": [
+                        {
+                            "text": {
+                                "text": [
+                                    "Follow us on Twitter to stay up-to-date with our latest news and events"
+                                ]
+                            }
+                        },
+                        {
+                            "payload": {
+                                "richContent": [
+                                    [
+                                        {
+                                            "type": "info",
+                                            "title": "Follow us on Twitter!",
+                                            "subtitle": "Stay up-to-date with our latest news and events",
+                                            "image": {
+                                                "src": {
+                                                    "rawUrl": "https://example.com/twitter-logo.png"
+                                                }
+                                            },
+                                            "actionLink": "https://twitter.com/safcollegiate"
+                                        }
+                                    ]
+                                ]
+                            }
+                        }
+                    ]
+                });
+                break;
+            }
+
+            case "Youtube": {
+                res.send({
+                    "fulfillmentMessages": [
+                        {
+                            "text": {
+                                "text": [
+                                    "Follow us on Youtube to stay up-to-date with our latest news and events"
+                                ]
+                            }
+                        },
+                        {
+                            "payload": {
+                                "richContent": [
+                                    [
+                                        {
+                                            "type": "info",
+                                            "title": "Follow us on Youtube!",
+                                            "subtitle": "Stay up-to-date with our latest news and events",
+                                            "image": {
+                                                "src": {
+                                                    "rawUrl": "https://example.com/youtube-logo.png"
+                                                }
+                                            },
+                                            "actionLink": "https://www.youtube.com/channel/UCZQY9YQZ5ZQZ5ZQZ5ZQZ5ZQ"
+                                        }
+                                    ]
+                                ]
+                            }
+                        }
+                    ]
+                });
+                break;
+            }
+
+            case "Website": {
+                res.send({
+                    "fulfillmentMessages": [
+                        {
+                            "text": {
+                                "text": [
+                                    "Visit our website to learn more about us"
+                                ]
+                            }
+                        },
+                        {
+                            "payload": {
+                                "richContent": [
+                                    [
+                                        {
+                                            "type": "info",
+                                            "title": "Visit our website",
+                                            "subtitle": "Learn more about us",
+                                            "image": {
+                                                "src": {
+                                                    "rawUrl": "https://example.com/website-logo.png"
+                                                }
+                                            },
+                                            "actionLink": "https://www.safcollegiate.com/"
+                                        }
+                                    ]
+                                ]
+                            }
+                        }
+                    ]
+                });
+                break;
+            }
+
+            case "SocialMedia": {
+                res.send({
+                    "fulfillmentMessages": [
+                        {
+                            "text": {
+                                "text": [
+                                    "Visit our website to learn more about us"
+                                ]
+                            }
+                        },
+                        {
+                            "payload": {
+                                "richContent": [
+                                    [
+                                        {
+                                            "type": "chips",
+                                            "options": [
+                                                {
+                                                    "text": "Facebook",
+                                                    "image": {
+                                                        "src": {
+                                                            "rawUrl": "https://example.com/images/logo.png"
+                                                        }
+                                                    },
+                                                    "link": "https://example.com"
+                                                },
+                                                {
+                                                    "text": "Instagram",
+                                                    "image": {
+                                                        "src": {
+                                                            "rawUrl": "https://example.com/images/logo.png"
+                                                        }
+                                                    },
+                                                    "link": "https://example.com"
+                                                },
+                                                {
+                                                    "text": "Twitter",
+                                                    "image": {
+                                                        "src": {
+                                                            "rawUrl": "https://example.com/images/logo.png"
+                                                        }
+                                                    },
+                                                    "link": "https://example.com"
+                                                },
+                                                {
+                                                    "text": "LinkedIn",
+                                                    "image": {
+                                                        "src": {
+                                                            "rawUrl": "https://example.com/images/logo.png"
+                                                        }
+                                                    },
+                                                    "link": "https://example.com"
+                                                },
+                                            ]
                                         }
                                     ]
                                 ]

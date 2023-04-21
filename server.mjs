@@ -164,10 +164,17 @@ app.post('/webhook', async (req, res) => {
                 res.send({
                     "fulfillmentMessages": [
                         {
+                            "text": {
+                                "text": [
+                                    "You can find us on Instagram at https://www.instagram.com/coder_nabeel30/?hl=en"
+                                ]
+                            }
+                        },
+                        {
                             "card": {
                                 "title": "Follow us on Instagram!",
                                 "subtitle": "Stay up-to-date with our latest news and events",
-                                "imageUri": "https://instagram.fkhi2-3.fna.fbcdn.net/v/t51.2885-19/316153330_2294629310695386_8725431159697261149_n.jpg?stp=dst-jpg_s150x150&_nc_ht=instagram.fkhi2-3.fna.fbcdn.net&_nc_cat=106&_nc_ohc=1BniT3iRJ-0AX9yCLLZ&edm=ABmJApABAAAA&ccb=7-5&oh=00_AfCMlQ75Rr8zJGnmz96pm1kAOuAXWac789wrKsOWV-Ou5g&oe=6446AB7E&_nc_sid=6136e7",
+                                "imageUri": "https://example.com/instagram-logo.png",
                                 "buttons": [
                                     {
                                         "text": "Follow us",

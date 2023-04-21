@@ -466,6 +466,124 @@ app.post('/webhook', async (req, res) => {
                 break;
             }
 
+            case "Streams": {
+                res.send({
+                    "fulfillmentMessages": [
+                        {
+                            "text": {
+                                "text": [
+                                    "We offer the following streams"
+                                ]
+                            }
+                        },
+                        {
+                            "payload": {
+                                "richContent": [
+                                    [
+                                        {
+                                            "type": "chips",
+                                            "options": [
+                                                {
+                                                    "text": "Science",
+                                                    "image": {
+                                                        "src": {
+                                                            "rawUrl": "https://example.com/images/logo.png"
+                                                        }
+                                                    },
+                                                    "link": "https://example.com"
+                                                },
+                                                {
+                                                    "text": "Commerce",
+                                                    "image": {
+                                                        "src": {
+                                                            "rawUrl": "https://example.com/images/logo.png"
+                                                        }
+                                                    },
+                                                    "link": "https://example.com"
+                                                },
+                                                {
+                                                    "text": "Arts",
+                                                    "image": {
+                                                        "src": {
+                                                            "rawUrl": "https://example.com/images/logo.png"
+                                                        }
+                                                    },
+                                                    "link": "https://example.com"
+                                                },
+                                            ]
+                                        }
+                                    ]
+                                ]
+                            }
+                        }
+                    ]
+                });
+                break;
+            }
+
+            case "RequiredDocuments": {
+                res.send({
+                    "fulfillmentMessages": [
+                        {
+                            "text": {
+                                "text": [
+                                    "You need to submit the following documents"
+                                ]
+                            }
+                        },
+                        {
+                            "payload": {
+                                "richContent": [
+                                    [
+                                        {
+                                            "type": "list",
+                                            "title": "Required Documents",
+                                            "subtitle": "You need to submit the following documents",
+                                            "image": {
+                                                "src": {
+                                                    "rawUrl": "https://example.com/images/logo.png"
+                                                }
+                                            },
+                                            "listItems": [
+                                                {
+                                                    "key": "1",
+                                                    "synonyms": [
+                                                        "first"
+                                                    ],
+
+                                                    "title": "Matric Certificate",
+                                                    "description": "Matric Certificate"
+                                                },
+                                                {
+                                                    "key": "2",
+                                                    "synonyms": [
+                                                        "second"
+                                                    ],
+
+                                                    "title": "Intermediate Certificate",
+                                                    "description": "Intermediate Certificate"
+                                                },
+                                                {
+                                                    "key": "3",
+                                                    "synonyms": [
+                                                        "third"
+                                                    ],
+
+                                                    "title": "Character Certificate",
+                                                    "description": "Character Certificate"
+                                                },
+
+                                            ]
+                                        }
+                                    ]
+                                ]
+                            }
+                        }
+                    ]
+                });
+                break;
+            }
+
             case "Default Fallback Intent": {
                 res.send({
                     "fulfillmentMessages": [

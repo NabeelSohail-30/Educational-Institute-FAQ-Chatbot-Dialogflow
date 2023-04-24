@@ -639,6 +639,20 @@ app.post('/webhook', async (req, res) => {
                 break;
             }
 
+            case "PhoneNumber": {
+                res.send({
+                    "fulfillmentMessages": [
+                        {
+                            "text": {
+                                "text": [
+                                    "You can contact us on 0300-1234567"
+                                ]
+                            }
+                        }
+                    ]
+                });
+                break;
+            }
 
             case "Default Fallback Intent": {
                 res.send({

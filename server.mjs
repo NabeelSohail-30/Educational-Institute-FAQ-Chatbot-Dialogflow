@@ -605,6 +605,32 @@ app.post('/webhook', async (req, res) => {
                         ]
                     });
                 }
+                else if (classes == "9" && stream == "Pre Medical") {
+                    res.send({
+                        "fulfillmentMessages": [
+                            {
+                                "text": {
+                                    "text": [
+                                        "The fee structure for Class 9 Pre Medical is as PKR 3000 per month"
+                                    ]
+                                }
+                            }
+                        ]
+                    });
+                }
+                else if (classes == "10" && stream == "Computer Science") {
+                    res.send({
+                        "fulfillmentMessages": [
+                            {
+                                "text": {
+                                    "text": [
+                                        "The fee structure for Class 10 Computer Science is as PKR 3000 per month"
+                                    ]
+                                }
+                            }
+                        ]
+                    });
+                }
                 else if (classes == "10" && stream == "Pre Medical") {
                     res.send({
                         "fulfillmentMessages": [
@@ -631,6 +657,58 @@ app.post('/webhook', async (req, res) => {
                         ]
                     });
                 }
+                else if (classes == "11" && stream == "Pre Medical") {
+                    res.send({
+                        "fulfillmentMessages": [
+                            {
+                                "text": {
+                                    "text": [
+                                        "The fee structure for First Year Pre Medical is as PKR 3500 per month"
+                                    ]
+                                }
+                            }
+                        ]
+                    });
+                }
+                else if (classes == "11" && stream == "Commerce") {
+                    res.send({
+                        "fulfillmentMessages": [
+                            {
+                                "text": {
+                                    "text": [
+                                        "The fee structure for First Year Commerce is as PKR 3500 per month"
+                                    ]
+                                }
+                            }
+                        ]
+                    });
+                }
+                else if (classes == "11" && stream == "Computer Science") {
+                    res.send({
+                        "fulfillmentMessages": [
+                            {
+                                "text": {
+                                    "text": [
+                                        "The fee structure for First Year Computer Science is as PKR 3500 per month"
+                                    ]
+                                }
+                            }
+                        ]
+                    });
+                }
+                else if (classes == "12" && stream == "Pre Engineering") {
+                    res.send({
+                        "fulfillmentMessages": [
+                            {
+                                "text": {
+                                    "text": [
+                                        "The fee structure for Second Year Engineering is as PKR 3500 per month"
+                                    ]
+                                }
+                            }
+                        ]
+                    });
+                }
                 else if (classes == "12" && stream == "Commerce") {
                     res.send({
                         "fulfillmentMessages": [
@@ -643,6 +721,45 @@ app.post('/webhook', async (req, res) => {
                             }
                         ]
                     });
+                }
+                else if (classes == "12" && stream == "Computer Science") {
+                    res.send({
+                        "fulfillmentMessages": [
+                            {
+                                "text": {
+                                    "text": [
+                                        "The fee structure for Second Year Computer Science is as PKR 3500 per month"
+                                    ]
+                                }
+                            }
+                        ]
+                    });
+                }
+                else if (classes == "12" && stream == "Pre Medical") {
+                    res.send({
+                        "fulfillmentMessages": [
+                            {
+                                "text": {
+                                    "text": [
+                                        "The fee structure for Second Year Pre Medical is as PKR 3500 per month"
+                                    ]
+                                }
+                            }
+                        ]
+                    });
+                }
+                else {
+                    res.send({
+                        "fulfillmentMessages": [
+                            {
+                                "text": {
+                                    "text": [
+                                        "Sorry, the fee structure for your class is not available. Please contact us at 0300-1234567"
+                                    ]
+                                }
+                            }
+                        ]
+                    })
                 }
 
                 break;

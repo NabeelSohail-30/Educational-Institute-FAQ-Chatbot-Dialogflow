@@ -588,6 +588,66 @@ app.post('/webhook', async (req, res) => {
                 break;
             }
 
+            case "FeeStructure": {
+                let classes = params.Classes
+                let stream = params.Group
+
+                if (classes == "9" && stream == "Computer Science") {
+                    res.send({
+                        "fulfillmentMessages": [
+                            {
+                                "text": {
+                                    "text": [
+                                        "The fee structure for Class 9 Computer Science is as PKR 3000 per month"
+                                    ]
+                                }
+                            }
+                        ]
+                    });
+                }
+                else if (classes == "10" && stream == "Pre Medical") {
+                    res.send({
+                        "fulfillmentMessages": [
+                            {
+                                "text": {
+                                    "text": [
+                                        "The fee structure for Matric Pre Medical is as PKR 3000 per month"
+                                    ]
+                                }
+                            }
+                        ]
+                    });
+                }
+                else if (classes == "11" && stream == "Pre Engineering") {
+                    res.send({
+                        "fulfillmentMessages": [
+                            {
+                                "text": {
+                                    "text": [
+                                        "The fee structure for First Year Engineering is as PKR 3500 per month"
+                                    ]
+                                }
+                            }
+                        ]
+                    });
+                }
+                else if (classes == "12" && stream == "Commerce") {
+                    res.send({
+                        "fulfillmentMessages": [
+                            {
+                                "text": {
+                                    "text": [
+                                        "The fee structure for Second Year Commerce is as PKR 3500 per month"
+                                    ]
+                                }
+                            }
+                        ]
+                    });
+                }
+
+                break;
+            }
+
             case "Default Fallback Intent": {
                 res.send({
                     "fulfillmentMessages": [

@@ -731,6 +731,21 @@ app.post('/webhook', async (req, res) => {
                 break;
             }
 
+            case "BatchSize": {
+                res.send({
+                    "fulfillmentMessages": [
+                        {
+                            "text": {
+                                "text": [
+                                    "The batch size is 30 students"
+                                ]
+                            }
+                        }
+                    ]
+                })
+                break;
+            }
+
             default: {
                 res.send({
                     "fulfillmentMessages": [

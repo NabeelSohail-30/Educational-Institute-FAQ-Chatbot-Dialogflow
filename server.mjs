@@ -467,59 +467,121 @@ app.post('/webhook', async (req, res) => {
             }
 
             case "Streams": {
-                res.send({
-                    "fulfillmentMessages": [
+                const classValue = params.Classes;
+                let fulfillmentMessages;
+
+                if (classValue === "9" || classValue === "10") {
+                    fulfillmentMessages = [
                         {
-                            "text": {
-                                "text": [
-                                    "We offer the following streams"
-                                ]
-                            }
+                            text: {
+                                text: [`We offer the following streams for class ${classValue}`],
+                            },
                         },
                         {
-                            "payload": {
-                                "richContent": [
+                            payload: {
+                                richContent: [
                                     [
                                         {
-                                            "type": "chips",
-                                            "options": [
+                                            type: "chips",
+                                            options: [
                                                 {
-                                                    "text": "Science",
-                                                    "image": {
-                                                        "src": {
-                                                            "rawUrl": "https://example.com/images/logo.png"
-                                                        }
+                                                    text: "Computer Science",
+                                                    image: {
+                                                        src: {
+                                                            rawUrl: "https://example.com/images/logo.png",
+                                                        },
                                                     },
-                                                    "link": "https://example.com"
+                                                    link: "https://example.com",
                                                 },
                                                 {
-                                                    "text": "Commerce",
-                                                    "image": {
-                                                        "src": {
-                                                            "rawUrl": "https://example.com/images/logo.png"
-                                                        }
+                                                    text: "Medical",
+                                                    image: {
+                                                        src: {
+                                                            rawUrl: "https://example.com/images/logo.png",
+                                                        },
                                                     },
-                                                    "link": "https://example.com"
+                                                    link: "https://example.com",
+                                                },
+                                            ],
+                                        },
+                                    ],
+                                ],
+                            },
+                        },
+                    ];
+                } else if (classValue === "11" || classValue === "12") {
+                    fulfillmentMessages = [
+                        {
+                            text: {
+                                text: [`We offer the following streams for class ${classValue}`],
+                            },
+                        },
+                        {
+                            payload: {
+                                richContent: [
+                                    [
+                                        {
+                                            type: "chips",
+                                            options: [
+                                                {
+                                                    text: "Computer Science",
+                                                    image: {
+                                                        src: {
+                                                            rawUrl: "https://example.com/images/logo.png",
+                                                        },
+                                                    },
+                                                    link: "https://example.com",
                                                 },
                                                 {
-                                                    "text": "Arts",
-                                                    "image": {
-                                                        "src": {
-                                                            "rawUrl": "https://example.com/images/logo.png"
-                                                        }
+                                                    text: "Commerce",
+                                                    image: {
+                                                        src: {
+                                                            rawUrl: "https://example.com/images/logo.png",
+                                                        },
                                                     },
-                                                    "link": "https://example.com"
+                                                    link: "https://example.com",
                                                 },
-                                            ]
-                                        }
-                                    ]
-                                ]
-                            }
-                        }
-                    ]
+                                                {
+                                                    text: "Pre Engineering",
+                                                    image: {
+                                                        src: {
+                                                            rawUrl: "https://example.com/images/logo.png",
+                                                        },
+                                                    },
+                                                    link: "https://example.com",
+                                                },
+                                                {
+                                                    text: "Pre Medical",
+                                                    image: {
+                                                        src: {
+                                                            rawUrl: "https://example.com/images/logo.png",
+                                                        },
+                                                    },
+                                                    link: "https://example.com",
+                                                },
+                                            ],
+                                        },
+                                    ],
+                                ],
+                            },
+                        },
+                    ];
+                } else {
+                    fulfillmentMessages = [
+                        {
+                            text: {
+                                text: [`Sorry, we do not offer any streams for class ${classValue}`],
+                            },
+                        },
+                    ];
+                }
+
+                res.send({
+                    fulfillmentMessages,
                 });
                 break;
             }
+
 
             case "RequiredDocuments": {
                 res.send({

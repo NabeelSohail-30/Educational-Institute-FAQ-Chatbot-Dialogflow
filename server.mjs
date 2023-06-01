@@ -746,6 +746,21 @@ app.post('/webhook', async (req, res) => {
                 break;
             }
 
+            case "ClassDuration": {
+                res.send({
+                    "fulfillmentMessages": [
+                        {
+                            "text": {
+                                "text": [
+                                    "The class duration is 1 hour"
+                                ]
+                            }
+                        }
+                    ]
+                })
+                break;
+            }
+
             default: {
                 res.send({
                     "fulfillmentMessages": [

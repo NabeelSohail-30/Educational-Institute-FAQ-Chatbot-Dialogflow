@@ -761,6 +761,21 @@ app.post('/webhook', async (req, res) => {
                 break;
             }
 
+            case "ClassTiming": {
+                res.send({
+                    "fulfillmentMessages": [
+                        {
+                            "text": {
+                                "text": [
+                                    "The class timings are 8:00 AM to 2:00 PM"
+                                ]
+                            }
+                        }
+                    ]
+                })
+                break;
+            }
+
             default: {
                 res.send({
                     "fulfillmentMessages": [

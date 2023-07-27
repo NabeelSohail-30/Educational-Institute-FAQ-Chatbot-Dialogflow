@@ -817,6 +817,40 @@ app.post('/webhook', async (req, res) => {
                 break;
             }
 
+            case "AdmissionForm": {
+                res.send({
+                    "fulfillmentMessages": [
+                        {
+                            "text": {
+                                "text": [
+                                    "You can fill the form Online from our website, and we also provide admission forms at the institute"
+                                ]
+                            }
+                        },
+                        {
+                            "payload": {
+                                "richContent": [
+                                    [
+                                        {
+                                            "type": "info",
+                                            "title": "Link to the Form",
+                                            "subtitle": "Here is the link to the form",
+                                            "image": {
+                                                "src": {
+                                                    "rawUrl": "https://example.com/website-logo.png"
+                                                }
+                                            },
+                                            "actionLink": "https://www.safcollegiate.com/"
+                                        }
+                                    ]
+                                ]
+                            }
+                        }
+                    ]
+                })
+                break;
+            }
+
             case "Default Fallback Intent": {
                 res.send({
                     "fulfillmentMessages": [

@@ -716,21 +716,6 @@ app.post('/webhook', async (req, res) => {
                 break;
             }
 
-            case "Default Fallback Intent": {
-                res.send({
-                    "fulfillmentMessages": [
-                        {
-                            "text": {
-                                "text": [
-                                    "Sorry, I didn't get that. Please try again or contact us at 0300-1234567"
-                                ]
-                            }
-                        }
-                    ]
-                })
-                break;
-            }
-
             case "BatchSize": {
                 res.send({
                     "fulfillmentMessages": [
@@ -776,13 +761,89 @@ app.post('/webhook', async (req, res) => {
                 break;
             }
 
+            case "Classes": {
+                res.send({
+                    "fulfillmentMessages": [
+                        {
+                            "text": {
+                                "text": [
+                                    "We Offer coaching for the following classes"
+                                ]
+                            }
+                        },
+                        {
+                            "payload": {
+                                "richContent": [
+                                    [
+                                        {
+                                            "type": "chips",
+
+                                            "options": [
+                                                {
+                                                    "text": "11",
+                                                    "image": {
+                                                        "src": {
+                                                            "rawUrl": "https://example.com/images/logo.png"
+                                                        }
+                                                    },
+                                                },
+                                                {
+                                                    "text": "12",
+                                                    "image": {
+                                                        "src": {
+                                                            "rawUrl": "https://example.com/images/logo.png"
+                                                        }
+                                                    },
+                                                },
+                                                {
+                                                    "text": "10",
+                                                    "image": {
+                                                        "src": {
+                                                            "rawUrl": "https://example.com/images/logo.png"
+                                                        }
+                                                    },
+                                                },
+                                                {
+                                                    "text": "09",
+                                                    "image": {
+                                                        "src": {
+                                                            "rawUrl": "https://example.com/images/logo.png"
+                                                        }
+                                                    },
+                                                },
+                                            ]
+                                        }
+                                    ]
+                                ]
+                            }
+                        }
+                    ]
+                })
+                break;
+            }
+
+            case "Default Fallback Intent": {
+                res.send({
+                    "fulfillmentMessages": [
+                        {
+                            "text": {
+                                "text": [
+                                    "Sorry, I didn't get that. Please try again or contact us at 0300-1234567"
+                                ]
+                            }
+                        }
+                    ]
+                })
+                break;
+            }
+
             default: {
                 res.send({
                     "fulfillmentMessages": [
                         {
                             "text": {
                                 "text": [
-                                    "Sorry, I didn't get that. Please try again"
+                                    "Sorry, I didn't get that. Please try again or contact us at 0300-1234567"
                                 ]
                             }
                         }

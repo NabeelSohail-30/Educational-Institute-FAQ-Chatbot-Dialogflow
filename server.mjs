@@ -802,6 +802,21 @@ app.post('/webhook', async (req, res) => {
                 break;
             }
 
+            case "OfficeTimings": {
+                res.send({
+                    "fulfillmentMessages": [
+                        {
+                            "text": {
+                                "text": [
+                                    "The office timings are 8:00 AM to 2:00 PM"
+                                ]
+                            }
+                        }
+                    ]
+                })
+                break;
+            }
+
             case "Default Fallback Intent": {
                 res.send({
                     "fulfillmentMessages": [

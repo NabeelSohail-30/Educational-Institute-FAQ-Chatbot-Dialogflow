@@ -821,27 +821,53 @@ app.post('/webhook', async (req, res) => {
                 res.send({
                     "fulfillmentMessages": [
                         {
-                            platform: 'TELEGRAM',
-                            text: {
-                                text: [
-                                    'You can fill the form Online from our website, and we also provide admission forms at the institute'
-                                ],
-                            },
-                            payload: {
-                                telegram: {
-                                    text: 'You can fill the form Online from our website, and we also provide admission forms at the institute',
-                                    reply_markup: {
-                                        inline_keyboard: [
+                            "text": {
+                                "text": [
+                                    "You can fill the form Online from our website, and we also provide admission forms at the institute"
+                                ]
+                            }
+                        },
+                        {
+                            "payload": {
+                                "telegram": {
+                                    "text": "Pick a color",
+                                    "reply_markup": {
+                                        "inline_keyboard": [
                                             [
                                                 {
-                                                    text: 'Link to the Form',
-                                                    url: 'https://www.safcollegiate.com/'
+                                                    "text": "Red",
+                                                    "callback_data": "Red"
+                                                }
+                                            ],
+                                            [
+                                                {
+                                                    "text": "Green",
+                                                    "callback_data": "Green"
+                                                }
+                                            ],
+                                            [
+                                                {
+                                                    "text": "Yellow",
+                                                    "callback_data": "Yellow"
+                                                }
+                                            ],
+                                            [
+                                                {
+                                                    "text": "Blue",
+                                                    "callback_data": "Blue"
+                                                }
+                                            ],
+                                            [
+                                                {
+                                                    "text": "Pink",
+                                                    "callback_data": "Pink"
                                                 }
                                             ]
                                         ]
                                     }
                                 }
                             }
+
                         }
                     ]
                 })

@@ -802,13 +802,13 @@ app.post('/webhook', async (req, res) => {
                 break;
             }
 
-            case "OfficeTimings": {
+            case "AdmissionCancellationPolicy": {
                 res.send({
                     "fulfillmentMessages": [
                         {
                             "text": {
                                 "text": [
-                                    "The office timings are 8:00 AM to 2:00 PM"
+                                    "You can cancel your admission at any time"
                                 ]
                             }
                         }

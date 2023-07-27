@@ -819,18 +819,28 @@ app.post('/webhook', async (req, res) => {
 
             case "AdmissionForm": {
                 res.send({
-                    "telegram": [
+                    "fulfillmentMessages": [
                         {
-                            "text": "You can fill the form Online from our website, and we also provide admission forms at the institute",
-                            "reply_markup": {
-                                "inline_keyboard": [
-                                    [
-                                        {
-                                            "text": "Link to the Form",
-                                            "url": "https://www.safcollegiate.com/"
-                                        }
-                                    ]
-                                ]
+                            platform: 'TELEGRAM',
+                            text: {
+                                text: [
+                                    'You can fill the form Online from our website, and we also provide admission forms at the institute'
+                                ],
+                            },
+                            payload: {
+                                telegram: {
+                                    text: 'You can fill the form Online from our website, and we also provide admission forms at the institute',
+                                    reply_markup: {
+                                        inline_keyboard: [
+                                            [
+                                                {
+                                                    text: 'Link to the Form',
+                                                    url: 'https://www.safcollegiate.com/'
+                                                }
+                                            ]
+                                        ]
+                                    }
+                                }
                             }
                         }
                     ]

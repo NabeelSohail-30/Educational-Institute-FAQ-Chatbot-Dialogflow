@@ -781,35 +781,15 @@ app.post('/webhook', async (req, res) => {
                                             "options": [
                                                 {
                                                     "text": "11",
-                                                    "image": {
-                                                        "src": {
-                                                            "rawUrl": "https://example.com/images/logo.png"
-                                                        }
-                                                    },
                                                 },
                                                 {
                                                     "text": "12",
-                                                    "image": {
-                                                        "src": {
-                                                            "rawUrl": "https://example.com/images/logo.png"
-                                                        }
-                                                    },
                                                 },
                                                 {
                                                     "text": "10",
-                                                    "image": {
-                                                        "src": {
-                                                            "rawUrl": "https://example.com/images/logo.png"
-                                                        }
-                                                    },
                                                 },
                                                 {
                                                     "text": "09",
-                                                    "image": {
-                                                        "src": {
-                                                            "rawUrl": "https://example.com/images/logo.png"
-                                                        }
-                                                    },
                                                 },
                                             ]
                                         }

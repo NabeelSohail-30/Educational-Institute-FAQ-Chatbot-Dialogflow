@@ -851,6 +851,47 @@ app.post('/webhook', async (req, res) => {
                 break;
             }
 
+            case "ClassMode": {
+                res.send({
+                    "fulfillmentMessages": [
+                        {
+                            "text": {
+                                "text": [
+                                    "We offer 3 modes of class"
+                                ]
+                            }
+                        },
+                        {
+                            "payload": {
+                                "richContent": [
+                                    [
+                                        {
+                                            "type": "chips",
+
+                                            "options": [
+                                                {
+
+                                                    "text": "Online",
+                                                },
+
+                                                {
+                                                    "text": "Offline",
+                                                },
+                                                {
+
+                                                    "text": "Both",
+                                                },
+                                            ]
+                                        }
+                                    ]
+                                ]
+                            }
+                        }
+                    ]
+                })
+                break;
+            }
+
             case "Default Fallback Intent": {
                 res.send({
                     "fulfillmentMessages": [

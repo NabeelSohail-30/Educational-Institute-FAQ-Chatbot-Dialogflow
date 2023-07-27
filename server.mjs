@@ -819,7 +819,7 @@ app.post('/webhook', async (req, res) => {
 
             case "AdmissionForm": {
                 res.send({
-                    "fulfillmentMessages": [
+                    "telegram": [
                         {
                             "text": "You can fill the form Online from our website, and we also provide admission forms at the institute",
                             "reply_markup": {

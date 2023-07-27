@@ -892,6 +892,21 @@ app.post('/webhook', async (req, res) => {
                 break;
             }
 
+            case "DemoClass": {
+                res.send({
+                    "fulfillmentMessages": [
+                        {
+                            "text": {
+                                "text": [
+                                    "We Offer Free Demo Class for Students, Students can come to the institute and attend the demo class without any complicated process."
+                                ]
+                            }
+                        }
+                    ]
+                });
+                break;
+            }
+
             case "Default Fallback Intent": {
                 res.send({
                     "fulfillmentMessages": [

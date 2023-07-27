@@ -821,26 +821,13 @@ app.post('/webhook', async (req, res) => {
                 res.send({
                     "fulfillmentMessages": [
                         {
-                            "text": {
-                                "text": [
-                                    "You can fill the form Online from our website, and we also provide admission forms at the institute"
-                                ]
-                            }
-                        },
-                        {
-                            "payload": {
-                                "richContent": [
+                            "text": "You can fill the form Online from our website, and we also provide admission forms at the institute",
+                            "reply_markup": {
+                                "inline_keyboard": [
                                     [
                                         {
-                                            "type": "info",
-                                            "title": "Link to the Form",
-                                            "subtitle": "Here is the link to the form",
-                                            "image": {
-                                                "src": {
-                                                    "rawUrl": "https://example.com/website-logo.png"
-                                                }
-                                            },
-                                            "actionLink": "https://www.safcollegiate.com/"
+                                            "text": "Link to the Form",
+                                            "url": "https://www.safcollegiate.com/"
                                         }
                                     ]
                                 ]

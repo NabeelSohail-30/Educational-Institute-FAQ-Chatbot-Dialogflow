@@ -823,51 +823,27 @@ app.post('/webhook', async (req, res) => {
                         {
                             "text": {
                                 "text": [
-                                    "You can fill the form Online from our website, and we also provide admission forms at the institute"
+                                    "You can get the admission form from the institute as well as from our website"
                                 ]
                             }
                         },
                         {
                             "payload": {
-                                "telegram": {
-                                    "text": "Pick a color",
-                                    "reply_markup": {
-                                        "inline_keyboard": [
-                                            [
-                                                {
-                                                    "text": "Red",
-                                                    "callback_data": "Red"
-                                                }
-                                            ],
-                                            [
-                                                {
-                                                    "text": "Green",
-                                                    "callback_data": "Green"
-                                                }
-                                            ],
-                                            [
-                                                {
-                                                    "text": "Yellow",
-                                                    "callback_data": "Yellow"
-                                                }
-                                            ],
-                                            [
-                                                {
-                                                    "text": "Blue",
-                                                    "callback_data": "Blue"
-                                                }
-                                            ],
-                                            [
-                                                {
-                                                    "text": "Pink",
-                                                    "callback_data": "Pink"
-                                                }
-                                            ]
-                                        ]
-                                    }
-                                }
-                            }
+                                "richContent": [
+                                    [
+                                        {
+                                            "type": "chips",
 
+                                            "options": [
+                                                {
+                                                    "text": "Get Admission Form",
+                                                    "link": "https://example.com"
+                                                },
+                                            ]
+                                        }
+                                    ]
+                                ]
+                            }
                         }
                     ]
                 })
